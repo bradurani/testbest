@@ -11,6 +11,7 @@ class WelcomeController < ApplicationController
 
     def update
 
+        puts("It's a #{params['commit']}")
         puts("Strikes: #{params['strikes']}")
 
         render 'index'
