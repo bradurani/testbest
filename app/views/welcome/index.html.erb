@@ -27,6 +27,8 @@
 <div class="inner">
   <%= form_tag do %>
     <div class="score">Score: <%= @score_a %>-<%= @score_b %></div>
+      <%= hidden_field_tag(:score_a, @score_a) %>
+      <%= hidden_field_tag(:score_b, @score_b) %>
     <div class="at_bat">At Bat: <%= @at_bat %><%= hidden_field_tag(:at_bat, @at_bat) %></div>
     <br/>
     <div>Balls: <%= @balls %><%= hidden_field_tag(:balls, @balls) %></div>

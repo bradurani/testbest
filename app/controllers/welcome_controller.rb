@@ -10,10 +10,21 @@ class WelcomeController < ApplicationController
     end
 
     def update
+        score_a = params['score_a'].to_i
+        score_b = params['score_b'].to_i
+        balls = params['balls'].to_i
+        strikes = params['strikes'].to_i
+        outs = params['outs'].to_i
+        at_bat = params['at_bat']
 
-        puts("It's a #{params['commit']}")
-        puts("Strikes: #{params['strikes']}")
+        action = params['commit']
 
+
+
+        calculator = BaseballCalculator.new
+        @score_a, @score_b, @balls, @strikes, @outs, @at_bat = calculator.calculate(score_a, score_b, balls, strikes, outs, at_bat, action)
+
+        puts "Score A is #{@score_a}"
         render 'index'
     end
 
