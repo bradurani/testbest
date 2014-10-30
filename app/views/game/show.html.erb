@@ -1,0 +1,40 @@
+<style>
+    body {
+        padding: 24px;
+        font-size: 24px;
+        width: 100%;
+        background: url(http://www.redhdwallpapers.com/wp-content/uploads/2014/07/angels-baseball-pics-2.jpg)
+    }
+    .inner {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        width: 500px;
+        padding: 20px;
+    }
+
+    .score {
+      font-size: 35px;
+      font-weight: bold
+  }
+  .at_bat {
+
+  }
+</style>
+
+
+
+<div class="inner">
+  <%= form_tag do %>
+    <div class="score">Score: <%= $score_a %>-<%= $score_b %></div>
+    <div class="at_bat">At Bat: <%= $at_bat %><%= hidden_field_tag(:at_bat, $at_bat) %></div>
+    <br/>
+    <div>Balls: <%= $balls %><%= hidden_field_tag(:balls, $balls) %></div>
+    <div>Strikes: <%= $strikes %><%= hidden_field_tag(:strikes, $strikes) %></div>
+    <div>Outs: <%= $outs %><%= hidden_field_tag(:outs, $outs) %></div>
+    <br/>
+
+    <%= submit_tag('Foul Ball')%><%= submit_tag('Ball') %><%= submit_tag('Strike')%><%= submit_tag('Out')%><%= submit_tag('Home Run!')%>
+
+  <% end %>
+</div>
