@@ -27,7 +27,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'rspec', '~> 3.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -45,3 +44,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :test do
+  gem "capybara"
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'pry'
+end
